@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VSOURCE YouTube SEO Co-Pilot</title>
+    <title>VSOURCE YouTube SEO Co-Pilot Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Simple spinner animation */
         .spinner {
             border: 4px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
-            border-top: 4px solid #3b82f6;
+            border-top: 4px solid #4f46e5;
             width: 40px;
             height: 40px;
             animation: spin 1s linear infinite;
@@ -29,49 +28,51 @@
 </head>
 <body class="bg-gray-900 text-gray-200 flex items-center justify-center min-h-screen p-4">
 
-    <main class="w-full max-w-3xl bg-gray-800 rounded-2xl shadow-2xl p-6 md:p-10 space-y-8">
+    <main class="w-full max-w-4xl bg-gray-800 rounded-2xl shadow-2xl p-6 md:p-10 space-y-8">
         <!-- Header Section -->
         <header class="text-center">
-            <h1 class="text-3xl md:text-4xl font-bold text-white">VSOURCE YouTube SEO Co-Pilot</h1>
-            <p class="text-blue-300 mt-2">Your AI assistant for creating viral Telugu YouTube content.</p>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-white">VSOURCE YouTube SEO Co-Pilot</h1>
+            <p class="text-indigo-300 mt-2">Your AI Dashboard for Viral Content Strategy</p>
         </header>
 
         <!-- Input Form Section -->
-        <section id="input-section" class="space-y-6">
-            <div>
-                <label for="source-topic" class="block text-sm font-medium text-gray-300 mb-2">1. Enter Your Source or Topic</label>
-                <input type="text" id="source-topic" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="e.g., Ganpat University, B.Tech in AI/ML, Best Laptops 2024">
+        <section id="input-section" class="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
+            <div class="md:col-span-2">
+                <label for="source-topic" class="block text-sm font-medium text-gray-300 mb-2">1. Enter Your Core Topic or Keyword</label>
+                <input type="text" id="source-topic" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="e.g., Ganpat University, B.Tech in AI/ML">
             </div>
 
             <div>
                 <label for="content-type" class="block text-sm font-medium text-gray-300 mb-2">2. Choose Content Type</label>
-                <select id="content-type" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                <select id="content-type" class="w-full bg-gray-700 border border-gray-600 text-white rounded-lg p-3 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500">
                     <option value="thumbnail">Thumbnail Text (Tanglish)</option>
-                    <option value="titles">Video Titles (Click-Worthy)</option>
-                    <option value="description">Video Description (SEO Optimized)</option>
+                    <option value="titles">Video Titles (High CTR)</option>
+                    <option value="description">Video Description (SEO Rich)</option>
                     <option value="tags">Keywords & Tags</option>
-                    <option value="hooks">Script Hooks (Engaging Intros)</option>
+                    <option value="hashtags">Hashtags (For Shorts & Posts)</option>
+                    <option value="hooks">Script Hooks (15-sec Intros)</option>
+                    <option value="video_ideas">Video Idea Angles</option>
+                    <option value="community_posts">Community Post Ideas</option>
                 </select>
             </div>
 
-            <button id="generate-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition-transform transform hover:scale-105 shadow-lg">
+            <button id="generate-btn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition-transform transform hover:scale-105 shadow-lg">
                 Generate Content
             </button>
         </section>
 
         <!-- Output Section -->
-        <section id="output-section" class="bg-gray-900 rounded-lg p-6 min-h-[200px] flex items-center justify-center">
-            <div id="loading-spinner" class="hidden">
-                <div class="spinner"></div>
-                <p class="mt-4 text-gray-400">Generating...</p>
+        <section id="output-section" class="bg-gray-900 rounded-lg p-6 min-h-[250px] flex items-center justify-center">
+            <div id="loading-spinner" class="hidden text-center">
+                <div class="spinner mx-auto"></div>
+                <p class="mt-4 text-gray-400">Fetching facts & writing...</p>
             </div>
             <div id="output-placeholder" class="text-gray-500 text-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.5L15.232 5.232z" /></svg>
-                <p class="mt-2">Your AI-generated content will appear here.</p>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
+                <p class="mt-2">Your AI-generated content strategy will appear here.</p>
             </div>
             <div id="results-container" class="w-full text-left"></div>
         </section>
-
     </main>
 
     <script>
@@ -79,187 +80,179 @@
         const sourceTopicInput = document.getElementById('source-topic');
         const contentTypeSelect = document.getElementById('content-type');
         const generateBtn = document.getElementById('generate-btn');
-        const outputSection = document.getElementById('output-section');
         const loadingSpinner = document.getElementById('loading-spinner');
         const outputPlaceholder = document.getElementById('output-placeholder');
         const resultsContainer = document.getElementById('results-container');
 
-        // --- Event Listener for the Generate Button ---
         generateBtn.addEventListener('click', handleGeneration);
+
+        // --- MOCK DATA FETCHING ---
+        const fetchedDataCache = {
+            "ganpat university": `
+- Accreditations: NAAC 'A+' Grade.
+- Key Collaborations: Maruti Suzuki (for Japan-India Institute for Manufacturing - JIM), IBM Software Lab, Bosch-Rexroth Automation Center.
+- Campus: Multiple "Centres of Excellence" like 5G labs and Additive Manufacturing.
+- Selling Points: Strong industry linkage, hands-on learning, high placement rates.
+`
+        };
+
+        function getFetchedData(topic) {
+            const lowerTopic = topic.toLowerCase();
+            for (const key in fetchedDataCache) {
+                if (key.includes(lowerTopic)) {
+                    return fetchedDataCache[key];
+                }
+            }
+            return "No specific data found. Generate based on general knowledge.";
+        }
 
         async function handleGeneration() {
             const topic = sourceTopicInput.value.trim();
             const contentType = contentTypeSelect.value;
-
-            // Input validation
             if (!topic) {
-                alert('Please enter a source or topic first.');
+                alert('Please enter a core topic first.');
                 return;
             }
 
-            // --- UI State Update: Show loading ---
-            generateBtn.disabled = true;
-            generateBtn.textContent = 'Generating...';
-            outputPlaceholder.classList.add('hidden');
-            resultsContainer.innerHTML = '';
-            loadingSpinner.classList.remove('hidden');
+            setLoadingState(true);
 
             try {
-                // --- Prompt Engineering: Create a detailed prompt for Gemini ---
-                const prompt = createPrompt(topic, contentType);
-
-                // --- Gemini API Call ---
-                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-                const payload = { contents: chatHistory };
-                const apiKey = ""; // API key will be handled by the environment
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-
-                if (!response.ok) {
-                    throw new Error(`API Error: ${response.status} ${response.statusText}`);
-                }
+                const contextData = getFetchedData(topic);
+                // *** THIS IS THE NEW PROMPT FUNCTION CALL ***
+                const prompt = createRawStylePrompt(topic, contentType, contextData);
+                const response = await callGeminiAPI(prompt);
+                const text = response.candidates[0].content.parts[0].text;
                 
-                const result = await response.json();
-
-                if (result.candidates && result.candidates.length > 0) {
-                    const text = result.candidates[0].content.parts[0].text;
-                    displayResults(text, contentType);
-                } else {
-                    throw new Error('No content generated. The response might be empty or blocked.');
-                }
+                displayResults(text);
 
             } catch (error) {
                 console.error('Error:', error);
-                resultsContainer.innerHTML = `<p class="text-red-400 text-center">An error occurred. Please check the console for details and try again. The model might have refused to answer.</p>`;
+                resultsContainer.innerHTML = `<p class="text-red-400 text-center">An error occurred. The model might have refused to answer. Please check the console.</p>`;
+                outputPlaceholder.classList.add('hidden');
             } finally {
-                // --- UI State Reset: Hide loading ---
+                setLoadingState(false);
+            }
+        }
+
+        function setLoadingState(isLoading) {
+            if (isLoading) {
+                generateBtn.disabled = true;
+                generateBtn.textContent = 'Generating...';
+                outputPlaceholder.classList.add('hidden');
+                resultsContainer.innerHTML = '';
+                loadingSpinner.classList.remove('hidden');
+            } else {
                 loadingSpinner.classList.add('hidden');
                 generateBtn.disabled = false;
                 generateBtn.textContent = 'Generate Content';
             }
         }
 
-        /**
-         * Creates a specific, detailed prompt for the Gemini API based on user selections.
-         * @param {string} topic - The user's source topic.
-         * @param {string} contentType - The selected content type.
-         * @returns {string} - A fully formed prompt for the AI.
-         */
-        function createPrompt(topic, contentType) {
-            // *** THIS IS THE UPGRADED PROMPT WITH THE EXPERT PERSONA ***
-            let basePrompt = `Act as a world-class YouTube SEO expert, a viral content strategist, an expert advertising copywriter, and the head of content for a top digital marketing agency. Your core strength is creating content that gets extremely high click-through rates and watch time.
+        async function callGeminiAPI(prompt) {
+            const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
+            const apiKey = ""; // Handled by environment
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
             
-Your target audience is from Andhra Pradesh and Telangana, India, so you are a master of creating engaging "Tanglish" (a mix of Telugu and English) content.
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
 
-Your main task is to generate content for the following source/topic: "${topic}".\n\n`;
-
-            switch (contentType) {
-                case 'thumbnail':
-                    return basePrompt + "Generate exactly 10 short, punchy, and viral thumbnail text ideas. They MUST be in 'Tanglish' format. Use persuasive, positive, and urgent words to create curiosity and a fear of missing out (FOMO). For example: 'B.Tech ikkada, Udyogam Maruti Suzuki lo.' or 'Mī Startup Idea ki life icche University'.";
-                case 'titles':
-                    return basePrompt + "Generate 10 click-worthy, SEO-optimized video titles in English. Use proven YouTube formulas like lists, questions, and strong, emotional value propositions. Keep them under 70 characters for maximum impact.";
-                case 'description':
-                    return basePrompt + "Write one ideal, SEO-optimized YouTube video description. Start with a powerful 2-line hook that creates immediate curiosity. Then, provide a detailed paragraph about the topic. Include a section for 'In This Video' with placeholder timestamps and a section with placeholder links for 'Connect With Us'. Naturally weave in a rich set of relevant keywords about the topic throughout the description.";
-                case 'tags':
-                    return basePegenerateBtn.disabled = false;
-                generateBtn.textContent = 'Generate Content';
+            if (!response.ok) throw new Error(`API Error: ${response.status}`);
+            const result = await response.json();
+            if (!result.candidates || result.candidates.length === 0) {
+                 throw new Error('No content generated. The response might be empty or blocked.');
             }
+            return result;
         }
+        
+        // *** THIS IS THE NEW PROMPT FUNCTION THAT BLENDS THE UI WITH YOUR PREFERRED STYLE ***
+        function createRawStylePrompt(topic, contentType, contextData) {
+            const basePrompt = `
+            You are a viral Telugu YouTube content creator. Your style is very direct, raw, and uses 'Tanglish'.
+            Your task is to take the following real facts about a topic and turn them into short, punchy, selling points.
 
-        /**
-         * Creates a specific, detailed prompt for the Gemini API based on user selections.
-         * @param {string} topic - The user's source topic.
-         * @param {string} contentType - The selected content type.
-         * @returns {string} - A fully formed prompt for the AI.
-         */
-        function createPrompt(topic, contentType) {
-            // *** THIS IS THE UPGRADED PROMPT WITH THE EXPERT PERSONA ***
-            let basePrompt = `Act as a world-class YouTube SEO expert, a viral content strategist, an expert advertising copywriter, and the head of content for a top digital marketing agency. Your core strength is creating content that gets extremely high click-through rates and watch time.
-            
-Your target audience is from Andhra Pradesh and Telangana, India, so you are a master of creating engaging "Tanglish" (a mix of Telugu and English) content.
+            **IMPORTANT INSTRUCTION:** You MUST follow the exact style of these examples. Do not be too polished. Keep it raw and direct.
+            ---
+            **EXAMPLE STYLE TO FOLLOW:**
+            - 16 companylu university lo kalgina university
+            - btech cse aiml ki top ranked university
+            - 5g networking labs kalgina ekeka university
+            - Aiml ki india lo dinnini minchina university ledu
+            - btech aiml industry ready programs tho
+            ---
 
-Your main task is to generate content for the following source/topic: "${topic}".\n\n`;
+            **YOUR TASK:**
+            Now, use the following real facts about "${topic}" to generate content.
+
+            **REAL FACTS:**
+            ${contextData}
+            ---
+            `;
 
             switch (contentType) {
                 case 'thumbnail':
-                    return basePrompt + "Generate exactly 10 short, punchy, and viral thumbnail text ideas. They MUST be in 'Tanglish' format. Use persuasive, positive, and urgent words to create curiosity and a fear of missing out (FOMO). For example: 'B.Tech ikkada, Udyogam Maruti Suzuki lo.' or 'Mī Startup Idea ki life icche University'.";
+                    return basePrompt + "Generate 10 thumbnail texts in the example style.";
                 case 'titles':
-                    return basePrompt + "Generate 10 click-worthy, SEO-optimized video titles in English. Use proven YouTube formulas like lists, questions, and strong, emotional value propositions. Keep them under 70 characters for maximum impact.";
+                    return basePrompt + "Generate 10 short video titles in the example style. Make them sound like headlines.";
                 case 'description':
-                    return basePrompt + "Write one ideal, SEO-optimized YouTube video description. Start with a powerful 2-line hook that creates immediate curiosity. Then, provide a detailed paragraph about the topic. Include a section for 'In This Video' with placeholder timestamps and a section with placeholder links for 'Connect With Us'. Naturally weave in a rich set of relevant keywords about the topic throughout the description.";
+                    return basePrompt + "Write a short video description. Start with 2-3 powerful lines in the example style. Then write a small paragraph explaining the key facts in simple English.";
                 case 'tags':
-                    return basePrompt + "Generate a comma-separated list of at least 25 highly relevant YouTube keywords and tags for a video about this topic. Include a mix of broad (high search volume), specific (long-tail), and common Tanglish keywords to maximize reach.";
+                    return basePrompt + "Generate 20+ keywords and tags. Mix English and Tanglish words based on the facts.";
+                case 'hashtags':
+                    return basePrompt + "Generate 15 hashtags. Use facts like #MarutiSuzukiCollab, #NAAC_A_Plus, #5GLabUniversity.";
                 case 'hooks':
-                    return basePrompt + "Generate 5 different, highly engaging video script hooks (the first 10-15 seconds of a video). Each hook must grab the viewer's attention immediately, create intense curiosity, and clearly state the video's core value proposition. Write them in simple, conversational English.";
+                    return basePrompt + "Generate 5 script intros (hooks). Each should be a single, powerful question or statement in Tanglish, based on the facts.";
+                case 'video_ideas':
+                    return basePrompt + "Generate 7 video ideas. Each idea should be a single line in the example style, representing a video concept.";
+                case 'community_posts':
+                    return basePrompt + "Generate 5 community post ideas. Make them short questions or polls in Tanglish, based on the facts.";
                 default:
                     return `Tell me something interesting about ${topic}.`;
             }
         }
 
-        /**
-         * Displays the generated content in the UI.
-         * @param {string} text - The raw text from the API.
-         * @param {string} contentType - The type of content to format.
-         */
-        function displayResults(text, contentType) {
-            resultsContainer.innerHTML = ''; // Clear previous results
-            
-            // For descriptions, we want to preserve formatting. For others, split into a list.
-            if (contentType === 'description') {
-                const pre = document.createElement('pre');
-                pre.className = 'whitespace-pre-wrap text-gray-300 text-sm';
-                pre.textContent = text;
-                resultsContainer.appendChild(pre);
-            } else {
-                const items = text.split('\n').filter(item => item.trim() !== '');
-                const list = document.createElement('ul');
-                list.className = 'space-y-3';
+        function displayResults(text) {
+            outputPlaceholder.classList.add('hidden');
+            resultsContainer.innerHTML = '';
 
-                items.forEach(item => {
-                    // Clean up potential numbering from the model's response
-                    const cleanItem = item.replace(/^\d+\.\s*/, ''); 
-                    
-                    const listItem = document.createElement('li');
-                    listItem.className = 'bg-gray-800 p-3 rounded-lg flex justify-between items-center';
-                    
-                    const itemText = document.createElement('span');
-                    itemText.textContent = cleanItem;
-                    itemText.className = 'flex-grow mr-4';
-                    
-                    const copyBtn = document.createElement('button');
-                    copyBtn.textContent = 'Copy';
-                    copyBtn.className = 'bg-blue-500 hover:bg-blue-600 text-white text-xs font-semibold py-1 px-3 rounded-md transition';
-                    
-                    copyBtn.onclick = () => {
-                        // Use the reliable execCommand for iframe compatibility
-                        const textarea = document.createElement('textarea');
-                        textarea.value = cleanItem;
-                        document.body.appendChild(textarea);
-                        textarea.select();
-                        try {
-                            document.execCommand('copy');
-                            copyBtn.textContent = 'Copied!';
-                            setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
-                        } catch (err) {
-                            console.error('Failed to copy text: ', err);
-                            copyBtn.textContent = 'Error';
-                        }
-                        document.body.removeChild(textarea);
-                    };
+            const items = text.split('\n').filter(item => item.trim() !== '' && item.length > 3);
+            const list = document.createElement('ul');
+            list.className = 'space-y-3';
 
-                    listItem.appendChild(itemText);
-                    listItem.appendChild(copyBtn);
-                    list.appendChild(listItem);
-                });
-                resultsContainer.appendChild(list);
-            }
+            items.forEach(item => {
+                const cleanItem = item.replace(/^[\d\-\.]+\s*/, '');
+                const listItem = document.createElement('li');
+                listItem.className = 'bg-gray-700 p-3 rounded-lg flex justify-between items-center transition-all hover:bg-gray-600';
+                
+                const itemText = document.createElement('span');
+                itemText.textContent = cleanItem;
+                itemText.className = 'flex-grow mr-4 text-gray-200';
+                
+                const copyBtn = document.createElement('button');
+                copyBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>`;
+                copyBtn.className = 'bg-indigo-500 hover:bg-indigo-600 text-white text-xs font-semibold p-2 rounded-md transition';
+                
+                copyBtn.onclick = () => {
+                    const textarea = document.createElement('textarea');
+                    textarea.value = cleanItem;
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    try {
+                        document.execCommand('copy');
+                        copyBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>`;
+                        setTimeout(() => { copyBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" /></svg>`; }, 2000);
+                    } catch (err) { console.error('Failed to copy text: ', err); }
+                    document.body.removeChild(textarea);
+                };
+
+                listItem.appendChild(itemText);
+                listItem.appendChild(copyBtn);
+                list.appendChild(listItem);
+            });
+            resultsContainer.appendChild(list);
         }
-
     </script>
 </body>
 </html>
